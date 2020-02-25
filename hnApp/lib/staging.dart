@@ -7,7 +7,7 @@ import 'env/environmentSettings.dart';
 void main() {
   var configuredApp = EnvConfig(
     env: EnvironmentSettings(
-      baseApi: "https://hacker-news.firebaseio.com/v0/",
+      baseApi: "http://staging.test.xyz",
       isProduction: false,
     ),
     child: HnApp(),

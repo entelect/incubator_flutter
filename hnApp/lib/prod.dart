@@ -8,7 +8,7 @@ void main() {
   var configuredApp = EnvConfig(
     env: EnvironmentSettings(
       baseApi: "https://hacker-news.firebaseio.com/v0/",
-      isProduction: false,
+      isProduction: true,
     ),
     child: HnApp(),
   );

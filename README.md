@@ -1,9 +1,14 @@
 # Step 1
-## Project setup
-Run `flutter create hnApp`
+## Configuration setup
 
-cd `./hnApp`
+Rename `main.dart` to `appShell.dart` and move the file to `components/`
 
-`flutter run`
+Then create a new files for the different environments
+ - prod.dart _Production_
+ - staging.dart _Staging_
+ - main.dart _Development_
 
-Remove all of the comments because we don't need documentation 😅
+Create `env/` folder
+Create `EnvironmentSettings` class, this will hold all of the app's settings that are different for each environment.
+Create an InheritedWidget and call it `EnvConfig`. _An InheritedWidget is a great way to pass data to Widget children without passing the data to each child._
+
