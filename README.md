@@ -1,14 +1,16 @@
 # Step 1
-## Configuration setup
+## Page setup
 
-Rename `main.dart` to `appShell.dart` and move the file to `components/`
+There are few different ways to get routing setup.
 
-Then create a new files for the different environments
- - prod.dart _Production_
- - staging.dart _Staging_
- - main.dart _Development_
+I am going to use a mixture of named and un-named routes.
 
-Create `env/` folder
-Create `EnvironmentSettings` class, this will hold all of the app's settings that are different for each environment.
-Create an InheritedWidget and call it `EnvConfig`. _An InheritedWidget is a great way to pass data to Widget children without passing the data to each child._
+Pull the MyHomePage Widget out of the appShell and place it into its own file in the `pages` folder.
 
+Start changing some strings here and there.
+
+## Basic Routing
+
+Create `helpers/routes.dart` file, set up home as a named route.
+
+Call the `initNamedRoutes()` function in the `appShell.dart` file. Then pass the result to the Material App and set the initial route to the home page.
