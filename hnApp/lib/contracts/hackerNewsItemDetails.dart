@@ -37,7 +37,9 @@ class HackerNewsItemDetails {
         by: json["by"],
         descendants: json["descendants"],
         id: json["id"],
-        kids: List<int>.from(json["kids"].map((x) => x)),
+        kids: json["kids"] != null
+            ? List<int>.from(json["kids"].map((x) => x))
+            : List<int>(),
         score: json["score"],
         time: json["time"],
         title: json["title"],

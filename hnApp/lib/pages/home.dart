@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../components/hackerNewsItem.dart';
 import '../services/HackerNewsService.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,9 +37,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder(
         itemCount: hackerNewsTopPosts.length,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(hackerNewsTopPosts[index].toString()),
-          );
+          return hackerNewsItem(context, hackerNewsTopPosts[index]);
         },
       ),
     );
