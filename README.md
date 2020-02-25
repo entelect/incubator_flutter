@@ -1,16 +1,17 @@
-# Step 1
-## Page setup
+# Step 2
+## Get some Data
 
-There are few different ways to get routing setup.
+We are going to be fetching data from `https://hacker-news.firebaseio.com/v0/topstories.json`. This will give us the top stories from Hacker News.
 
-I am going to use a mixture of named and un-named routes.
+A plugin for http requests available here: https://pub.dev/packages/http.
+To install the package add `http: 0.12.0+4` to the `pubspec.yaml`
 
-Pull the MyHomePage Widget out of the appShell and place it into its own file in the `pages` folder.
+Set up services to communicate with the API. `BaseApiService` for basic api functionality and `HackerNewsService` for HackerNews specific requests.
+Add some test code in the home.dart
 
-Start changing some strings here and there.
+##### Success!
 
-## Basic Routing
+## async / await
+In the test code I used promise-like syntax to display the data from the API once the service gets the data. But we can use async await to write the code in a cleaner way.
 
-Create `helpers/routes.dart` file, set up home as a named route.
 
-Call the `initNamedRoutes()` function in the `appShell.dart` file. Then pass the result to the Material App and set the initial route to the home page.
