@@ -6,5 +6,4 @@ cd `./hnApp`
 
 `flutter run`
 
-## Additional Notes
-I am going to run the app using Desktop Embedding so that I do not need to run an Emulator or Simulator
+Remove all of the comments because we don't need documentation 😅
