@@ -10,31 +10,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void _testHackerNewsRequest() async {
+  List<int> hackerNewsTopPosts = List<int>();
+
+  void _fetchTopPosts(context) async {
     var result = await HackerNewsService().fetchTopIds(context);
-    print(result);
+    setState(() {
+      hackerNewsTopPosts = result;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    if (hackerNewsTopPosts.length < 1) {
+      _fetchTopPosts(context);
+      return Scaffold(
+        appBar: AppBar(title: Text("Loading")),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Test',
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _testHackerNewsRequest,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      body: ListView.builder(
+        itemCount: hackerNewsTopPosts.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(hackerNewsTopPosts[index].toString()),
+          );
+        },
       ),
     );
   }

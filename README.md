@@ -1,17 +1,15 @@
 # Step 2
-## Get some Data
+## We have the Data, now we need to display it
 
-We are going to be fetching data from `https://hacker-news.firebaseio.com/v0/topstories.json`. This will give us the top stories from Hacker News.
+Our first API call returned a list of integers, which are the uniqueId numbers of Hacker News posts. Normally I would prefer to display objects, but in this situation I will be passing the uniqueId to the list item and let the list item make the API call to get the details for each item. This is probably not the best solution, but will work for this sample app.
 
-A plugin for http requests available here: https://pub.dev/packages/http.
-To install the package add `http: 0.12.0+4` to the `pubspec.yaml`
+First let us refactor the home page, making it a bit easier to understand.
 
-Set up services to communicate with the API. `BaseApiService` for basic api functionality and `HackerNewsService` for HackerNews specific requests.
-Add some test code in the home.dart
+Then we can start displaying the uniqueId number in a list.
 
-##### Success!
+## First Widget
 
-## async / await
-In the test code I used promise-like syntax to display the data from the API once the service gets the data. But we can use async await to write the code in a cleaner way.
+Here is an example of a request to get an item's details: https://hacker-news.firebaseio.com/v0/item/22391341.json
 
+Create the dart `itemDetails` contract. https://app.quicktype.io/ has a great online app that can convert json into Dart objects
 
