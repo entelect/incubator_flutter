@@ -1,9 +1,9 @@
-# Step 1
+# Step 2
 ## Page setup
 
 There are few different ways to get routing setup.
 
-I am going to use a mixture of named and un-named routes.
+I am going to use a mixture of named and un-named routes. For the home page, since we wont be passing data to it, I will be making it a named route.
 
 Pull the MyHomePage Widget out of the appShell and place it into its own file in the `pages` folder.
 
