@@ -1,4 +1,4 @@
-# Step 2
+# Step 3
 ## Get some Data
 
 We are going to be fetching data from `https://hacker-news.firebaseio.com/v0/topstories.json`. This will give us the top stories from Hacker News.
