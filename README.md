@@ -13,5 +13,7 @@ Here is an example of a request to get an item's details: https://hacker-news.fi
 
 Create the dart `itemDetails` contract. https://app.quicktype.io/ has a great online app that can convert json into Dart objects
 
-_When testing the home page out I realised that the `kids` property was not always sent back, causing a null exception. So I changed the generated contract to handle it being null.
+_When testing the home page out I realised that the `kids` property was not always sent back from the HackerNews API, causing a null exception. So I changed the generated contract to handle it being null._
 
+From `kids: List<int>.from(json["kids"].map((x) => x))`
+to: `kids: json["kids"] != null ? List<int>.from(json["kids"].map((x) => x)) : List<int>(),`
